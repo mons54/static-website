@@ -1,29 +1,37 @@
+const config = require('./config');
+
+console.log(config)
+const baseUrl = config.get('baseUrl')
+const themeColor = config.get('themeColor')
+const title = config.get('title')
+const description = config.get('description')
+const image = config.get('image')
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
-    title: 'test-static-vuejs',
+    title: title,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=5' },
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:image', property: 'og:image', content: baseUrl + (config.get('og:image') || image) },
+      { hid: 'og:title', property: 'og:title', content: config.get('og:title') || title },
+      { hid: 'og:description', property: 'og:description', content: config.get('og:description') || description },
+      { name: 'theme-color', content: themeColor },
+      { name: 'apple-mobile-web-app-status-bar-style', content: config.get('apple:color') || themeColor },
+      { name: 'apple-mobile-web-app-title', content: config.get('apple:title') || title },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'image_src', href: baseUrl + image },
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
+  loading: { color: themeColor },
+  env: {
+    baseUrl: baseUrl
+  },
   build: {
-    /*
-    ** Run ESLint on save
-    */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

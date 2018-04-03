@@ -15,6 +15,12 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  head: {
+    title: "Hello World",
+    meta: [
+      { hid: 'description', name: 'description', content: 'Ma description personnalisée' }
+    ]
   }
 }
 </script>
