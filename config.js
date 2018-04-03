@@ -4,23 +4,23 @@ const path = require('path');
 let file = path.join(__dirname, 'config' + process.env.NODE_ENV);
 
 if (!fs.existsSync(file)) {
-    file = path.join(__dirname, 'config/default.json');
+  file = path.join(__dirname, 'config/default.json');
 }
 
-const data = JSON.parse(fs.readFileSync(file));
+const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
 
 module.exports = class Config {
 
-    static get(name, defaultValue = null) {
+  static get(name, defaultValue = null) {
 
-        if (!this.has(name)) {
-            return defaultValue;
-        }
-
-        return data[name];
+    if (!this.has(name)) {
+      return defaultValue;
     }
 
-    static has(name) {
-        return data.hasOwnProperty(name);
-    }
+    return data[name];
+  }
+
+  static has(name) {
+    return data.hasOwnProperty(name);
+  }
 }

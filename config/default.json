@@ -1,7 +1,7 @@
 {
-    "baseUrl": "https://solutionsweb.pro",
-    "themeColor": "#fff",
-    "title": "Solutions Web",
-    "description": "Static website",
-    "image": "/logo.png"
+  "title": "Meta title pour le référencement",
+  "description": "Meta description pour le référencement",
+  "themeColor": "#fff",
+  "image": "/logo.png",
+  "baseUrl": "http://localhost:3000"
 }

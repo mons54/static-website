@@ -1,11 +1,9 @@
 const config = require('./config');
-
-console.log(config)
-const baseUrl = config.get('baseUrl')
-const themeColor = config.get('themeColor')
-const title = config.get('title')
-const description = config.get('description')
-const image = config.get('image')
+const baseUrl = config.get('baseUrl');
+const themeColor = config.get('themeColor');
+const title = config.get('title');
+const description = config.get('description');
+const image = config.get('image');
 
 module.exports = {
   head: {
@@ -14,6 +12,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=5' },
       { hid: 'description', name: 'description', content: description },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
       { hid: 'og:image', property: 'og:image', content: baseUrl + (config.get('og:image') || image) },
       { hid: 'og:title', property: 'og:title', content: config.get('og:title') || title },
       { hid: 'og:description', property: 'og:description', content: config.get('og:description') || description },
@@ -25,12 +24,13 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'image_src', href: baseUrl + image },
-    ]
+    ],
   },
-  loading: { color: themeColor },
+  loading: false,
   env: {
-    baseUrl: baseUrl
+    baseUrl: baseUrl,
   },
+  plugins: ['~plugins/head'],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -39,8 +39,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
-}
+};
