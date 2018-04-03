@@ -1,7 +1,7 @@
 # PAGES
 
-This directory contains your Application Views and Routes.
-The framework reads all the .vue files inside this directory and creates the router of your application.
+Ce répertoire contient les vues et les routes de l'application.
+L'infrastructure lit tous les fichiers .vue dans ce répertoire et créer le routeur de l'application.
 
-More information about the usage of this directory in the documentation:
+Documentation:
 https://nuxtjs.org/guide/routing

@@ -1,9 +1,9 @@
 # MIDDLEWARE
 
-This directory contains your Application Middleware.
-The middleware lets you define custom function to be ran before rendering a page or a group of pages (layouts).
+Ce répertoire contient votre middleware d'application.
+Le middleware vous permet de définir une fonction personnalisée à exécuter avant de rendre une page ou un groupe de pages (mises en page).
 
-More information about the usage of this directory in the documentation:
+Plus d'informations sur l'utilisation de ce répertoire dans la documentation:
 https://nuxtjs.org/guide/routing#middleware
 
-**This directory is not required, you can delete it if you don't want to use it.**
+** Ce répertoire n'est pas obligatoire. **

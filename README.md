@@ -1,4 +1,4 @@
-# test-static-vuejs
+# static-webstite
 
 > Nuxt.js project
 
