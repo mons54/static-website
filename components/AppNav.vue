@@ -6,7 +6,7 @@
           <i class="logo"></i>
           <strong>App</strong> Static
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button v-on:click="open" class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           <span class="navbar-toggler-icon"></span>
           <span class="navbar-toggler-icon"></span>
@@ -64,3 +64,18 @@
     </div>
   </nav>
 </template>
+
+<script>
+  export default {
+    methods: {
+      open: function (e) {
+        this.$emit('nav:toggle');
+      }
+    },
+    data() {
+      return {
+        navOpen: true
+      }
+    }
+  }
+</script>
