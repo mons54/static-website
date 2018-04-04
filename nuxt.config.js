@@ -1,3 +1,6 @@
+const purgeCss = require('purgecss-webpack-plugin');
+const glob = require('glob-all');
+const path = require('path');
 const config = require('./config');
 const baseUrl = config.get('baseUrl');
 const themeColor = config.get('themeColor');
@@ -9,6 +12,7 @@ const manifest = config.get('manifest');
 let link = [
   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
   { rel: 'image_src', href: baseUrl + image },
+  { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons' },
 ]
 
 if (manifest) {
@@ -37,11 +41,25 @@ module.exports = {
   env: {
     baseUrl: baseUrl,
   },
+  css: [
+    '~assets/scss/material-kit.scss'
+  ],
   plugins: ['~plugins/head'],
   build: {
+    extractCSS: true,
     extend (config, { isDev, isClient }) {
-
-      if (isDev && isClient) {
+      if (!isDev) {
+        config.plugins.push(
+          new purgeCss({
+            paths: glob.sync([
+              path.join(__dirname, './pages/**/*.vue'),
+              path.join(__dirname, './layouts/**/*.vue'),
+              path.join(__dirname, './components/**/*.vue')
+            ]),
+            whitelist: ['html', 'body', '.nav-open', '#bodyClick']
+          })
+        )
+      } else if (isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
