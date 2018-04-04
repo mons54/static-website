@@ -9,8 +9,7 @@
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" href="#">
-        <i class="logo"></i>
-        <strong>App</strong> Static
+        <strong>Solutions</strong> Web
       </a>
       <button v-on:click="open" class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
