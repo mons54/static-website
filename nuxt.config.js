@@ -4,6 +4,16 @@ const themeColor = config.get('themeColor');
 const title = config.get('title');
 const description = config.get('description');
 const image = config.get('image');
+const manifest = config.get('manifest');
+
+let link = [
+  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+  { rel: 'image_src', href: baseUrl + image },
+]
+
+if (manifest) {
+  link.push({ rel: 'manifest', href: manifest });
+}
 
 module.exports = {
   head: {
@@ -21,10 +31,7 @@ module.exports = {
       { name: 'apple-mobile-web-app-title', content: config.get('apple:title') || title },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'image_src', href: baseUrl + image },
-    ],
+    link: link,
   },
   loading: false,
   env: {
@@ -33,6 +40,7 @@ module.exports = {
   plugins: ['~plugins/head'],
   build: {
     extend (config, { isDev, isClient }) {
+
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -42,5 +50,5 @@ module.exports = {
         });
       }
     }
-  }
+  },
 };
