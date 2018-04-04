@@ -20,25 +20,50 @@
             border-radius: $border-radius-base;
             line-height: 20px;
 
-            &:not(.btn-just-icon) .fa{
-                position: relative;
-                top: 2px;
-                margin-top: -4px;
-                margin-right: 4px;
+            @include media-breakpoint-up(lg) {
+                font-size: .9rem;
+            }
+            &.nav-link--text-mobile {
+                @include media-breakpoint-up(lg) {
+                    &:not(.btn) .material-icons{
+                        margin-right: 0;
+                    }
+                }
+                & .nav-text{
+                    @include media-breakpoint-up(lg) {
+                        display: none;
+                    }
+                }
+            }
+            .navbar .navbar-nav .nav-item .nav-link {
+                padding: .7rem;
+                font-size: .9rem;
             }
 
-            & .material-icons,
-            & .fa{
-                font-size: $font-size-lg;
+            & .material-icons{
+                font-size: 1rem;
                 max-width: 24px;
                 margin-top: -1.1em;
+                @include media-breakpoint-up(lg) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            & .svg-icons {
+                width: 1rem;
+                @include media-breakpoint-up(lg) {
+                    width: 1.2rem;
+                }
             }
 
             &:not(.btn) .material-icons{
                 margin-top: -7px;
-                top: 3px;
+                top: 2px;
                 position: relative;
-                margin-right: 3px;
+                margin-right: 6px;
+                @include media-breakpoint-up(lg) {
+                    top: 3px;
+                }
             }
 
             &.profile-photo{
