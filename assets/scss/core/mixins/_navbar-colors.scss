@@ -1,6 +1,6 @@
 @mixin navbar-colors($color, $link-color) {
     color: $link-color;
-    background-color: $color !important;
+    background-color: $color;
     @include shadow-navbar-color($color);
 
     .dropdown-item:hover,
