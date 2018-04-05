@@ -1,40 +1,13 @@
 <template>
-  <div v-bind:class="{ 'nav-open': navOpen }">
-    <app-nav @nav:toggle="navToggle" />
-    <nuxt/>
-    <div v-on:click="navClose" id="bodyClick"></div>
-  </div>
+  <app-nav/>
 </template>
 
 <script>
-import AppNav from '~/components/AppNav.vue'
+import AppNav from '~/components/nav.vue'
 
 export default {
   components: {
     AppNav
   },
-  data() {
-    return {
-      navOpen: false
-    }
-  },
-  methods: {
-    navToggle () {
-      this.navOpen = !this.navOpen;
-    },
-    navClose () {
-      this.navOpen = false;
-    }
-  },
 }
 </script>
-
-<style>
-#bodyClick {
-  display: none;
-}
-
-.nav-open #bodyClick {
-  display: block;
-}
-</style>
