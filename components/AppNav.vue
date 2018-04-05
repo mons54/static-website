@@ -5,7 +5,7 @@
       'fixed-top': fixed == 'top', 
       'fixed-bottom': fixed == 'bottom', 
       'navbar-transparent': transparent 
-    }">
+    }" id="navBar">
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" href="#">
@@ -73,6 +73,9 @@
 
 <script>
 
+const fixed = 'top';
+const transparent = false;
+
 export default {
   methods: {
     open: function (e) {
@@ -81,10 +84,20 @@ export default {
   },
   data() {
     return {
-      fixed: 'top', // top, bottom or false
-      transparent: false, // true or false
+      fixed: fixed,
+      transparent: transparent,
     }
-  }
+  },
+}
+
+if (process.browser && transparent) {
+  window.addEventListener('scroll', function(e) {
+    if ((window.pageYOffset || document.documentElement.scrollTop) > 20) {
+      document.getElementById('navBar').classList.remove('navbar-transparent');
+    } else {
+      document.getElementById('navBar').classList.add('navbar-transparent');
+    }
+  });
 }
 
 </script>
@@ -94,6 +107,11 @@ export default {
 .navbar {
   color: rgb(85, 85, 85);
   background-color: #fff;
+}
+
+.navbar.fixed-bottom {
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 </style>
