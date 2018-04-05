@@ -1,13 +1,13 @@
 <template>
-  <app-nav/>
+  <app-view/>
 </template>
 
 <script>
-import AppNav from '~/components/nav.vue'
+import AppView from './landing.vue' // set value to change default view
 
 export default {
   components: {
-    AppNav
+    AppView
   },
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <section class="container">
-    <h1 class="title">Page d'accueil</h1>
-  </section>
+  <div class="section">
+    <h2 class="h2">Page d'accueil</h2>
+  </div>
 </template>
 
 <script>
