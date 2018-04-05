@@ -1,7 +1,7 @@
 {
   "name": "static-website",
   "version": "0.0.1",
-  "description": "Static website project",
+  "description": "Project Static Website with Vue.js, Nuxt.js, Material Kit Bootstrap 4.",
   "author": "Julien Simonet <j.mons54@gmail.com>",
   "scripts": {
     "dev": "nuxt",
