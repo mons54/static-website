@@ -50,12 +50,9 @@
 @import "core/headers";
 @import "core/footers";
 
-// Core Plugins
-
+// Plugins
 @import "plugins/plugin-datetime-picker";
 @import "plugins/plugin-nouislider";
 
-// Sections and Example pages
-
-@import "core/example-pages";
+// Responsive
 @import "core/responsive";
