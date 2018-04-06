@@ -15,7 +15,7 @@ const optimizeImage = source => {
           imageminPngquant({quality: '65-80'})
       ]
   }).then(files => {
-      console.log('Optimize images', files);
+      console.log('Optimize images', source);
   });
 };
 
