@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="h1 title text-center">Landing Page</h1>
+            <h1 class="h1 title">Landing Page</h1>
             <p>
               Build a beautiful landing page with Vue.js, Nuxt.js, Material Kit and Bootstrap 4.
             </p>
@@ -53,6 +53,9 @@ export default {
   }
 
   .section {
-    padding: 70px;
+    position: relative;
+    top: -40px;
+    padding: 40px 0 0;
+    margin: 0;
   }
 </style>

@@ -141,7 +141,8 @@
         height: 50px;
         font-size: $navbar-brand-font-size - 0.125;
         line-height: 30px;
-        padding: $padding-general-y 0;
+        padding: $padding-general-y $navbar-toggler-padding-x;
+        margin-right: 0;
     }
 
     > .container {
@@ -177,7 +178,6 @@
     &.navbar-transparent{
         background-color: transparent !important;
         box-shadow: none;
-        padding-top: 25px;
         color: $white-color;
     }
 

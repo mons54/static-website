@@ -1,10 +1,15 @@
 <template>
   <div class="section">
-    <h2 class="h2">Page d'accueil</h2>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="h2">Page d'accueil</h2>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   head() {
     return this.$head({
