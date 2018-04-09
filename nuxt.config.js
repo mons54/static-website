@@ -44,7 +44,12 @@ module.exports = {
   css: [
     '~assets/scss/material-kit.scss'
   ],
-  plugins: ['~plugins/head'],
+  plugins: [
+    '~plugins/head'
+  ],
+  modules: [
+    ['bootstrap-vue/nuxt', { css: false }],
+  ],
   build: {
     extractCSS: true,
     extend (config, { isDev, isClient }) {
